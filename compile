@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#Compile script for calc on ipv6.
+
+clear
+rm -f q
+
+echo " * bison -d q.y"
+bison -d q.y
+
+echo " * flex -o q.lex.c q.lex"
+flex -o q.lex.c q.lex
+
+echo " * gcc -o q q.lex.c -lfl -lm"
+gcc -o q q.lex.c q.tab.c -lfl -lm
+
+
+echo " * rm q.lex.c"
+rm -f q.lex.c
+
+echo " * rm q.tab.h"
+rm -f q.tab.h
+
+echo " * rm q.tab.c"
+rm -f q.tab.c
+
+

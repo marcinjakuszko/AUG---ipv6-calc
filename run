@@ -1,0 +1,6 @@
+#!/bin/bash
+./compile
+echo "Compile..."
+sleep 1;
+clear
+./q
